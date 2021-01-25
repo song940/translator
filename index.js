@@ -3,7 +3,7 @@ import { bind } from 'https://lsong.org/scripts/form.js';
 import { stringify } from 'https://lsong.org/scripts/query.js';
 import { createElement as h, render, useEffect, useState } from 'https://lsong.org/tinyact/src/index.js';
 
-const TranslatorResult = () => {
+const TranslatorApp = () => {
   const [result, setResult] = useState(null);
   useEffect(() => {
     bind('#fanyi', {
@@ -53,5 +53,5 @@ const TranslatorResult = () => {
 
 ready(() => {
   const app = document.getElementById('app');
-  render(h(TranslatorResult), app);
+  render(h(TranslatorApp), app);
 });
