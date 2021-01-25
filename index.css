@@ -1,0 +1,23 @@
+@import url(https://lsong.org/stylesheets/theme/default.css);
+@import url(https://lsong.org/stylesheets/theme/blue.css);
+@import url(https://lsong.org/stylesheets/form.css);
+@import url(https://lsong.org/stylesheets/link.css);
+@import url(https://lsong.org/stylesheets/button.css);
+@import url(https://lsong.org/css/stylesheet.css);
+@import url(https://lsong.org/css/main.css);
+
+body {
+  margin: auto;
+  max-width: 650px;
+  color: var(--text-color);
+  font-family: "Fira Code", monospace;
+  background-color: var(--background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--title-color);
+}
+
+a {
+  color: var(--link-color) !important;
+}
