@@ -1,8 +1,8 @@
 import { ready } from 'https://lsong.org/scripts/dom.js';
 import { bind } from 'https://lsong.org/scripts/form.js';
 import { stringify } from 'https://lsong.org/scripts/query.js';
-import { createElement as h, render, useEffect, useState } from 'https://lsong.org/tinyact/src/index.js';
-// import { h, render, useState, useEffect } from 'https://unpkg.c  om/htm/preact/standalone.module.js';
+// import { createElement as h, render, useEffect, useState } from 'https://lsong.org/tinyact/src/index.js';
+import { h, render, useState, useEffect } from 'https://unpkg.com/htm/preact/standalone.module.js';
 
 const ref = {};
 
