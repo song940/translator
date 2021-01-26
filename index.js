@@ -2,23 +2,32 @@ import { ready } from 'https://lsong.org/scripts/dom.js';
 import { bind } from 'https://lsong.org/scripts/form.js';
 import { stringify } from 'https://lsong.org/scripts/query.js';
 import { createElement as h, render, useEffect, useState } from 'https://lsong.org/tinyact/src/index.js';
+// import { h, render, useState, useEffect } from 'https://unpkg.c  om/htm/preact/standalone.module.js';
+
+const ref = {};
 
 const TranslatorApp = () => {
   const [result, setResult] = useState(null);
+  ref.setResult = setResult;
   useEffect(() => {
     bind('#fanyi', {
       onSubmit(e) {
+        const { setResult } = ref;
         const form = e.target;
         const data = form.serialize();
         const qs = stringify(data);
         fetch(`${form.action}?${qs}`).then(res => res.json()).then(setResult);
       }
-    })
+    });
   }, []);
-  console.log(result);
-  const { basic, translation, web } = result || {};
+  return h(TranslatorResult, result);
+};
+
+const TranslatorResult = ({ basic, translation, web }) => {
+  console.log(basic);
   return h("div", { className: "translator-result" },
-    basic && h("div", { className: "translator-result-basic" },
+    (basic && (basic['phonetic'] || basic['us-phonetic'] || basic['uk-phonetic'])) &&
+    h("div", { className: "translator-result-basic" },
       h("h3", null, "basic"),
       h("ul", { className: "translator-result-basic-phonetic" },
         basic['phonetic'] && h("li", null, "phonetic: ", basic['phonetic']),
