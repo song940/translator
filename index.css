@@ -4,19 +4,11 @@
 @import url(https://lsong.org/css/stylesheet.css);
 
 body {
-  margin: auto;
   max-width: 900px;
-  color: var(--text-color);
-  font-family: "Fira Code", monospace;
-  background-color: var(--background-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--title-color);
-}
-
-a {
-  color: var(--link-color) !important;
+h3 {
+  text-transform: uppercase;
 }
 
 textarea {
