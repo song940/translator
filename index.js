@@ -23,7 +23,6 @@ const TranslatorApp = () => {
 };
 
 const TranslatorResult = ({ basic, translation, web }) => {
-  console.log(basic);
   return h("div", { className: "translator-result" },
     (basic && (basic['phonetic'] || basic['us-phonetic'] || basic['uk-phonetic'])) &&
     h("div", { className: "translator-result-basic" },
